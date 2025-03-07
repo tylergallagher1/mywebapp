@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to the Home Page</h1>
+    {% if 'username' in session %}
+        <p>Logged in as {{ session['username'] }}
+            <br>
+            User email: {{ session['email'] }}
+        </p>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    {% else %}
+        <a href="{{ url_for('login') }}">Login</a>
+    {% endif %}
+    <br>
+    <br>
+        <a href="{{ url_for('list') }}">Make a List</a>
+</body>
+</html>
